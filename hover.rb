@@ -11,7 +11,7 @@ class Hover < Formula
   on_macos do
     if Hardware::CPU.intel?
       url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Darwin_amd64.tar.gz"
-      sha256 "c7f3bd867dd7fecd1cb2faa613d8715a85827ded119620e339c4e70da96fe589"
+      sha256 "47718bf63fe2b2003ec4c123cd70afa22675c5e932d4aa9d6a92d4afaf2c67dd"
 
       def install
         bin.install "hover"
@@ -19,7 +19,7 @@ class Hover < Formula
     end
     if Hardware::CPU.arm?
       url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Darwin_arm64.tar.gz"
-      sha256 "ab5b15e6763a0c329f7f1b9d4f84ea5b488226ce6acabe50acac7330b07921a3"
+      sha256 "23340a304bb3436a436de0c7f26ba7e8c29d1ed79dddbfff6e59a951b487ffaf"
 
       def install
         bin.install "hover"
@@ -28,17 +28,17 @@ class Hover < Formula
   end
 
   on_linux do
-    if Hardware::CPU.intel?
-      url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Linux_amd64.tar.gz"
-      sha256 "00e043e1eb21f7b66095b40f8910a86b992202957328fe3dc5b82d27e8bdad85"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Linux_arm64.tar.gz"
+      sha256 "bea700df3995b64d3c0f7e68f4509459103a58bb6184bb49afdefbd0f9fedf13"
 
       def install
         bin.install "hover"
       end
     end
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Linux_arm64.tar.gz"
-      sha256 "475040eb38238821a5a15ba9e98999079c990ab72dc742fad9fe20dc817257ee"
+    if Hardware::CPU.intel?
+      url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Linux_amd64.tar.gz"
+      sha256 "fa5068fbf10b3e5dd9656bc7c3e2d2e87d7378dbf857b58e70bdcbc42a32bbac"
 
       def install
         bin.install "hover"
