@@ -5,21 +5,21 @@
 class Hover < Formula
   desc "A CLI for deploying web applications to AWS Lambda"
   homepage "https://github.com/themsaid/hover"
-  version "0.0.1"
+  version "0.0.2"
   license "BSD-3-Clause"
 
   on_macos do
     if Hardware::CPU.intel?
-      url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Darwin_amd64.tar.gz"
-      sha256 "47718bf63fe2b2003ec4c123cd70afa22675c5e932d4aa9d6a92d4afaf2c67dd"
+      url "https://github.com/themsaid/hover/releases/download/v0.0.2/hover_0.0.2_Darwin_amd64.tar.gz"
+      sha256 "425c0d520941fdf883a66a56d9eed754fd15bdb88fcefe3fff54b280f4999bbe"
 
       def install
         bin.install "hover"
       end
     end
     if Hardware::CPU.arm?
-      url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Darwin_arm64.tar.gz"
-      sha256 "23340a304bb3436a436de0c7f26ba7e8c29d1ed79dddbfff6e59a951b487ffaf"
+      url "https://github.com/themsaid/hover/releases/download/v0.0.2/hover_0.0.2_Darwin_arm64.tar.gz"
+      sha256 "03652d87e3a1664808e101fd57c9a8316eabe2e0208c70a714eebd6908bc3f15"
 
       def install
         bin.install "hover"
@@ -28,17 +28,17 @@ class Hover < Formula
   end
 
   on_linux do
-    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
-      url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Linux_arm64.tar.gz"
-      sha256 "bea700df3995b64d3c0f7e68f4509459103a58bb6184bb49afdefbd0f9fedf13"
+    if Hardware::CPU.intel?
+      url "https://github.com/themsaid/hover/releases/download/v0.0.2/hover_0.0.2_Linux_amd64.tar.gz"
+      sha256 "4a0eb02a9b9a17da70070ad28f63d2b88187840a694bb680cd9bf61371b469f2"
 
       def install
         bin.install "hover"
       end
     end
-    if Hardware::CPU.intel?
-      url "https://github.com/themsaid/hover/releases/download/v0.0.1/hover_0.0.1_Linux_amd64.tar.gz"
-      sha256 "fa5068fbf10b3e5dd9656bc7c3e2d2e87d7378dbf857b58e70bdcbc42a32bbac"
+    if Hardware::CPU.arm? && Hardware::CPU.is_64_bit?
+      url "https://github.com/themsaid/hover/releases/download/v0.0.2/hover_0.0.2_Linux_arm64.tar.gz"
+      sha256 "39fb36094b5d918ab59d388d0d09a7663322511bc376c1920cb9aa71eb6b1876"
 
       def install
         bin.install "hover"
